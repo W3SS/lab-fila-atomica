@@ -1,0 +1,11 @@
+name: testes
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  playbooks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: testar no contêiner isolado, sem rede
+        run: ./testar.sh
